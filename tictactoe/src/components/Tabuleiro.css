@@ -1,6 +1,7 @@
 .tabuleiro{
     display: grid;
+    /* min-height: 100vh; */
     grid-template-columns: repeat(3, 6rem);
-    place-items: center;
-    justify-content: center;
+    place-items: center !important;
+    justify-content: center !important;
 }

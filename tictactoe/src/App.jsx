@@ -1,9 +1,8 @@
 import "./App.css";
-import React, {useState} from "react";
-import {Tabuleiro} from "./components/Tabuleiro";
+import React, { useState } from "react";
+import { Tabuleiro } from "./components/Tabuleiro";
 
 function App() {
-
   // Condições para ganhar = um desses true
   // [0, 1, 2] primeira linha
   // [3, 4, 5] segunda linha
@@ -17,23 +16,49 @@ function App() {
   const [tabuleiro, setTabuleiro] = useState(Array(9).fill(null));
   const [jogadorAtual, setJogadorAtual] = useState(true);
 
-  const SelecionaCaixa = (indiceTabuleiro) =>{
-    const tabuleiroAtualizado = tabuleiro.map((value, indice)=>{
-      if(indice === indiceTabuleiro){
-        return jogadorAtual === true ? "X" : "O"
-      }else{
+  const SelecionaCaixa = (indiceTabuleiro) => {
+    const tabuleiroAtualizado = tabuleiro.map((value, indice) => {
+      if (indice === indiceTabuleiro) {
+        return jogadorAtual === true ? "X" : "O";
+      } else {
         return value;
       }
-    })
+    });
 
     setTabuleiro(tabuleiroAtualizado);
 
     setJogadorAtual(!jogadorAtual);
-  }
+  };
 
   return (
     <div className="App">
-      <Tabuleiro tabuleiro={tabuleiro} onClick={SelecionaCaixa}/>
+      <div className="Quadradao">
+        <div className="Titulo">
+          <h1>Tic Tac Toe</h1>
+        </div>
+
+        <Tabuleiro tabuleiro={tabuleiro} onClick={SelecionaCaixa} />
+
+        <div className="Integrantes">
+          <h3 className="Grupo">Grupo:</h3>
+          <ul className="Lista">
+            <li>Arthur Viegas</li>
+            <li>Arthur Zanella</li>
+            <li>Henrique Ramires</li>
+            <li>Leonardo Rubert</li>
+            <li>Marcos Sanhudo</li>
+          </ul>
+        </div>
+
+        <div className="Materia">
+          <div className="Disciplina">
+            <h3><strong>Disciplina:</strong> Inteligência Artificial</h3>
+          </div>
+          <div className="Professora">
+            <h3><strong>Professora:</strong> Silvia Moraes</h3>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
