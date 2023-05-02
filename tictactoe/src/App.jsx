@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import { Tabuleiro } from "./components/Tabuleiro";
+import { BotaoLimpar } from "./components/BotaoLimpar";
 
 function App() {
   // Condições para ganhar = um desses true
@@ -15,6 +16,7 @@ function App() {
 
   const [tabuleiro, setTabuleiro] = useState(Array(9).fill(null));
   const [jogadorAtual, setJogadorAtual] = useState(true);
+  const [fimDeJogo, setFimDeJogo] = useState(false);
 
   const SelecionaCaixa = (indiceTabuleiro) => {
     const tabuleiroAtualizado = tabuleiro.map((value, indice) => {
@@ -30,6 +32,11 @@ function App() {
     setJogadorAtual(!jogadorAtual);
   };
 
+  const resetTabuleiro = () =>{
+    setFimDeJogo(false);
+    setTabuleiro(Array(9).fill(null))
+  }
+
   return (
     <div className="App">
       <div className="Quadradao">
@@ -37,7 +44,8 @@ function App() {
           <h1>Tic Tac Toe</h1>
         </div>
 
-        <Tabuleiro tabuleiro={tabuleiro} onClick={SelecionaCaixa} />
+        <Tabuleiro tabuleiro={tabuleiro} onClick={fimDeJogo ? resetTabuleiro : SelecionaCaixa} />
+        <BotaoLimpar resetTabuleiro={resetTabuleiro}/>
 
         <div className="Integrantes">
           <h3 className="Grupo">Grupo:</h3>
