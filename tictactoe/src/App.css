@@ -57,6 +57,15 @@ body {
   margin: 10px 0 0px 0;
 }
 
+.status {
+  background-color: #5F7E85; /*#FF4625 #2C87FF */
+  text-align: center;
+  padding: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
 strong{
   margin-right: 5px;
 }

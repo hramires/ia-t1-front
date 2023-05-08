@@ -21,10 +21,10 @@ function App() {
   const SelecionaCaixa = (indiceTabuleiro) => {
     const tabuleiroAtualizado = tabuleiro.map((value, indice) => {
       if (indice === indiceTabuleiro) {
-        return jogadorAtual === true ? "X" : "O";
-      } else {
-        return value;
-      }
+          return jogadorAtual === true ? "X" : "O";
+        } else {
+          return value;
+        }
     });
 
     setTabuleiro(tabuleiroAtualizado);
@@ -54,6 +54,7 @@ function App() {
             <li>Arthur Zanella</li>
             <li>Henrique Ramires</li>
             <li>Leonardo Rubert</li>
+	    <li>Lucas Salbego</li>
             <li>Marcos Sanhudo</li>
           </ul>
         </div>

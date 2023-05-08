@@ -20,15 +20,31 @@ export const Tabuleiro = ({tabuleiro, onClick}) => {
       });
   };
 
+  const definirStatus = () => {
+    switch (data.status) {
+      case "CONTINUA": return { texto: "Vez de outro jogador", cor: "#5F7E85" }; break;
+      case "POSITIVO_X": return { texto: "X venceu!", cor: "#FF4625" }; break;
+      case "NEGATIVO_X": return { texto: "X não venceu!", cor: "#5F7E85" }; break;
+      default: return { texto: "Jogo da velha", cor: "#5F7E85" }; break;
+      /* para quando O vencer: { texto: "O venceu!", cor: "#2C87FF" }
+         para quando der velha: { texto: "Deu velha!", cor: "#5F7E85" } */
+    }
+  }
+
 
   return (
-    <div className='tabuleiro'>
-        {tabuleiro.map((value, indice)=>{
-            return <Caixa value={value} onClick={() => {
-              onClick(indice);
-              getAxios();
-            }}/>
-        })}
-    </div>
+    <div>
+      <div className='status' style={{ backgroundColor: definirStatus().cor }}>
+          { definirStatus().texto }
+      </div>
+      <div className='tabuleiro'>
+          {tabuleiro.map((value, indice)=>{
+              return <Caixa value={value} onClick={() => {
+                onClick(indice);
+                getAxios();
+              }}/>
+          })}
+      </div>
+     </div>
   )
 }
