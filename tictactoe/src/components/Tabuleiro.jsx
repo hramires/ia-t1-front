@@ -9,7 +9,7 @@ export const Tabuleiro = ({tabuleiro, onClick}) => {
 
   const getAxios = () => {
     setIsLoading(true);
-    axios.get("")
+    axios.post("http://localhost:8080/v1/knn/calcular", tabuleiro.map(i => i == null ? '' : i))
       .then(response => {
         setData(response.data);
         console.log(data);
