@@ -3,6 +3,7 @@ import {Caixa} from "./Caixa";
 import "./Tabuleiro.css";
 import axios from "axios";
 
+
 export const Tabuleiro = ({tabuleiro, onClick}) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -22,10 +23,10 @@ export const Tabuleiro = ({tabuleiro, onClick}) => {
 
   const definirStatus = () => {
     switch (data.status) {
-      case "CONTINUA": return { texto: "Vez de outro jogador", cor: "#5F7E85" }; break;
-      case "POSITIVO_X": return { texto: "X venceu!", cor: "#FF4625" }; break;
-      case "NEGATIVO_X": return { texto: "X não venceu!", cor: "#5F7E85" }; break;
-      default: return { texto: "Jogo da velha", cor: "#5F7E85" }; break;
+      case "CONTINUA": return { texto: "Vez de outro jogador", cor: "#5F7E85" };
+      case "POSITIVO_X": return { texto: "X venceu!", cor: "#FF4625" };
+      case "NEGATIVO_X": return { texto: "X não venceu!", cor: "#5F7E85" };
+      default: return { texto: "Jogo da velha", cor: "#5F7E85" };
       /* para quando O vencer: { texto: "O venceu!", cor: "#2C87FF" }
          para quando der velha: { texto: "Deu velha!", cor: "#5F7E85" } */
     }
