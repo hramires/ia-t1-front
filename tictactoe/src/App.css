@@ -40,7 +40,7 @@ body {
   border-radius: 20px;
   background: transparent;
   backdrop-filter: blur(20px);
-  padding: 40px;
+  padding: 25px;
 }
 
 .Titulo{
@@ -63,7 +63,16 @@ body {
   padding: 8px;
   font-size: 1.2em;
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 25px;
+  width: 275px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  color: rgba(252, 241, 241, 0.899);
+}
+
+.status:hover{
+  cursor: default;
 }
 
 strong{
