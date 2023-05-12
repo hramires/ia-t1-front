@@ -23,7 +23,7 @@ export const Tabuleiro = ({tabuleiro, onClick}) => {
     switch (data.status) {
       case "CONTINUA": return { texto: "Vez de outro jogador", cor: "#5F7E85" };
       case "POSITIVO_X": return { texto: "X venceu!", cor: "#FF4625" };
-      case "NEGATIVO_X": return { texto: "X não venceu!", cor: "#5F7E85" };
+      case "NEGATIVO_X": return { texto: "O venceu!", cor: "#007bff" };
       default: return { texto: "Aguardando movimento", cor: "#ffc107" };
       /* para quando O vencer: { texto: "O venceu!", cor: "#2C87FF" }
          para quando der velha: { texto: "Deu velha!", cor: "#5F7E85" } */
